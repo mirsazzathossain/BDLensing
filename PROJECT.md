@@ -13,7 +13,7 @@ Assignees: Select yourself
 
 Labels: select "mask"
 
-Projects: Select "BDLensing"
+Projects: Select "Lens modeling"
 
 Milestone: Select "Likelihood mask"
 
@@ -24,7 +24,7 @@ Assignees: Select yourself
 
 Labels: select "pso"
 
-Projects: Select "BDLensing"
+Projects: Select "Lens modeling"
 
 Milestone: Select "Optimized lens model with PSO"
 
@@ -35,7 +35,7 @@ Assignees: Select yourself
 
 Labels: select "mcmc"
 
-Projects: Select "BDLensing"
+Projects: Select "Lens modeling"
 
 Milestone: Select "MCMC convergence"
 
@@ -46,7 +46,7 @@ Assignees: Select yourself
 
 Labels: select "deliverables"
 
-Projects: Select "BDLensing"
+Projects: Select "Lens modeling"
 
 Milestone: Select "Lens model deliverables"
 
