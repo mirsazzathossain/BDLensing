@@ -1,8 +1,9 @@
 ## How to set up issues to aid project management
 
 When you will be assigned a lens system to model, take a note of the lens 
-systems's name that looks like `DESIJ0123+4567`. Create the following four 
-issues. You can do this by clicking on the "Issues" tab on the top of the
+systems's name that looks like "DESIJ0123+4567". Create the following four 
+issues, but replace "DESIJ0123+4567" with your own system's name. You can 
+open a new issue by clicking on the "Issues" tab on the top of the
 repository page, and then clicking on the "New issue" button on the top-right
 corner of the page.
 
