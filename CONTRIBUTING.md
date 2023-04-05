@@ -43,9 +43,11 @@ skip to the next section each time you want to make changes to the code.
 
 ## Push changes to your forked repository on GitHub
 1. Pull from upstream using `git pull upstream main`.
-2. Fix any merge conflicts. There should not be any merge conflicts, if 
+2. **Never do `git push upstream main`.** This will push your changes to the 
+   main repository, which is not what you want to do.
+3. Fix any merge conflicts. There should not be any merge conflicts, if 
    everyone is modifying only the files for their own lens systems.
-3. Push the changes to your forked repository on GitHub using `git 
+4. Push the changes to your forked repository on GitHub using `git 
 push origin main`.
 
 ## Send a pull Request to the main repository
