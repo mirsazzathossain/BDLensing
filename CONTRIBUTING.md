@@ -38,8 +38,8 @@ skip to the next section each time you want to make changes to the code.
 2. Stage the changes using `git add .`
 3. Commit the changes using `git commit -m "<commit message>"`. The 
    first word of the commit message must be a verb in the present form. 
-   For example, "Modify mask for DESI0123" or "Update lens model 
-   for DESI2376".
+   For example, "Modify mask for DESIJ0123" or "Update lens model 
+   for DESIJ2376".
 
 ## Push changes to your forked repository on GitHub
 1. Pull from upstream using `git pull upstream main`.
