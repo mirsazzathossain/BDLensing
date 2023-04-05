@@ -5,15 +5,7 @@ systems's name that looks like "DESIJ0123+4567". Create the following four
 issues, but replace "DESIJ0123+4567" with your own system's name. You can 
 open a new issue by clicking on the "Issues" tab on the top of the
 repository page, and then clicking on the "New issue" button on the top-right
-corner of the page. The issue descriptions are given below.
-
-**After each issue is created, click on "+1 more" on the right panel 
-under "Projects", and choose the following dates for "Target date":**
-
-- Issue 1: 04/30/2023
-- Issue 2: 06/10/2023
-- Issue 3: 06/30/2023
-- Issue 4: 07/30/2023
+corner of the page.
 
 ## Issue descriptions
 
