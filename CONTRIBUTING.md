@@ -52,7 +52,7 @@ skip to the next section each time you want to make changes to the code.
 ## Send a pull Request to the main repository
 1. Go to the original repository on GitHub.
 2. Click on the "New pull request" button.
-3. Choose the dev branch in your forked repository as the "compare" branch 
+3. Choose the main branch in your forked repository as the "compare" branch 
    and the main branch in the original repository as the "base" branch.
 4. Review the changes and add a description if necessary.
 5. Click on the "Create pull request" button to send the pull request to the 
