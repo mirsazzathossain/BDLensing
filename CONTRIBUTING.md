@@ -37,7 +37,7 @@ skip to the next section each time you want to make changes to the code.
 1. Make changes to the code in your local clone of your fork.
 2. Stage the changes using `git add .`
 3. Commit the changes using `git commit -m "<commit message>"`. The 
-   first word of the commit message must be a verb in the present form. 
+   first word of the commit message should be a verb in the present form. 
    For example, "Modify mask for DESIJ0123" or "Update lens model 
    for DESIJ2376".
 
@@ -47,13 +47,12 @@ skip to the next section each time you want to make changes to the code.
    main repository, which is not what you want to do.
 3. Fix any merge conflicts. There should not be any merge conflicts, if 
    everyone is modifying only the files for their own lens systems.
-4. Push the changes to your forked repository on GitHub using `git 
-push origin main`.
+4. Push the changes to your forked repository on GitHub using `git push origin main`.
 
 ## Send a pull Request to the main repository
 1. Go to the original repository on GitHub.
 2. Click on the "New pull request" button.
-3. Choose the dev branch in your forked repository as the "compare" branch 
+3. Choose the main branch in your forked repository as the "compare" branch 
    and the main branch in the original repository as the "base" branch.
 4. Review the changes and add a description if necessary.
 5. Click on the "Create pull request" button to send the pull request to the 

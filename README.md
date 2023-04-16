@@ -20,3 +20,10 @@ allowed to be created by you and added to this repository through pull
 requests. You are not allowed to modify the .h5 files. Make sure your pull 
 requests do not add hidden files (e.g., .DS_Store) to the repository.
 
+Use the "Dicussions" section for thie repo to discuss anything or ask 
+questions about the lens modeling/analysis being done in this project. 
+This repository will be made public after the projet is completed, so 
+these discussions will also become public and could be helpful for the 
+community to find answers to similar questions they may have on lens 
+modeling.
+
