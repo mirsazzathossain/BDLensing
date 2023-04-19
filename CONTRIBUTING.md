@@ -54,8 +54,11 @@ skip to the next section each time you want to make changes to the code.
 2. Click on the "New pull request" button.
 3. Choose the main branch in your forked repository as the "compare" branch 
    and the main branch in the original repository as the "base" branch.
-4. Review the changes and add a description if necessary.
-5. Click on the "Create pull request" button to send the pull request to the 
+4. Review the changes and **add a description**. Example descriptions are, "This PR updates 
+the modeling notebook with progress made.", "Initial mask is created, this PR intends 
+to close #<issue_number>", or "Optimization of initial model with PSO is completed 
+for <Lens_Name>. This PR intends to close #<issue_number>".
+6. Click on the "Create pull request" button to send the pull request to the 
    main repository.
 
 That's it! Your changes will be reviewed, and if they are 
