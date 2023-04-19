@@ -32,7 +32,7 @@ repository through a pull request.
 
 You only need to do the above steps once. After the first-time setup, you can 
 skip to the next section each time you want to make changes to the code. At this point,
-you should check out "REVIEWING.md" to learn about what would be checked during the review 
+you should check out [REVIEWING.md](https://github.com/ajshajib/BDLensing/blob/main/REVIEWING.md) to learn about what would be checked during the review 
 of your code after you have created a pull request.
 
 ## Make changes and commit
