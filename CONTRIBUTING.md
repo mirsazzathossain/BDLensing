@@ -26,12 +26,12 @@ repository through a pull request.
 5. Type `git remote add upstream <main repository URL>` to add the main 
    repository as an upstream remote.
 6. Type `git remote -v` to verify that the upstream repository has been added.
-7. Add the main repository as an upstream remote using `git remote add 
-   upstream 
-   <URL>`, where `<URL>` is the repository's URL.
 
 You only need to do the above steps once. After the first-time setup, you can 
-skip to the next section each time you want to make changes to the code.
+skip to the next section each time you want to make changes to the code. At this point,
+you should check out [REVIEWING.md](https://github.com/ajshajib/BDLensing/blob/main/REVIEWING.md) 
+to learn about what would be checked during the review of your code after 
+you have created a pull request.
 
 ## Make changes and commit
 1. Make changes to the code in your local clone of your fork.
@@ -54,8 +54,11 @@ skip to the next section each time you want to make changes to the code.
 2. Click on the "New pull request" button.
 3. Choose the main branch in your forked repository as the "compare" branch 
    and the main branch in the original repository as the "base" branch.
-4. Review the changes and add a description if necessary.
-5. Click on the "Create pull request" button to send the pull request to the 
+4. Review the changes and **add a description**. Example descriptions are, "This PR updates 
+the modeling notebook with progress made.", "Initial mask is created, this PR intends 
+to close #<issue_number>", or "Optimization of initial model with PSO is completed 
+for <Lens_Name>. This PR intends to close #<issue_number>".
+6. Click on the "Create pull request" button to send the pull request to the 
    main repository.
 
 That's it! Your changes will be reviewed, and if they are 
