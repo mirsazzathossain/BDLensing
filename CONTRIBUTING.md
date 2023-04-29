@@ -26,9 +26,6 @@ repository through a pull request.
 5. Type `git remote add upstream <main repository URL>` to add the main 
    repository as an upstream remote.
 6. Type `git remote -v` to verify that the upstream repository has been added.
-7. Add the main repository as an upstream remote using `git remote add 
-   upstream 
-   <URL>`, where `<URL>` is the repository's URL.
 
 You only need to do the above steps once. After the first-time setup, you can 
 skip to the next section each time you want to make changes to the code. At this point,
