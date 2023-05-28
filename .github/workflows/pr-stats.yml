@@ -2,13 +2,13 @@ name: Pull Request Stats
 
 on:
   pull_request:
-    types: [opened]
-
+    types: [opened, reopened, review_requested]
+    
 jobs:
   stats:
     runs-on: ubuntu-latest
     steps:
-      - name: Run pull request stats
-        uses: flowwer-dev/pull-request-stats@master
+      - name: Pull Request Stats
+        uses: flowwer-dev/pull-request-stats@v2.8.1
         with:
-          period: 365
+          period: 180
