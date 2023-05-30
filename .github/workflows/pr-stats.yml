@@ -2,13 +2,15 @@ name: Pull Request Stats
 
 on:
   pull_request:
-    types: [opened]
-
+    types: [opened, reopened, assigned]
+  workflow_dispatch:
+    
 jobs:
   stats:
     runs-on: ubuntu-latest
     steps:
-      - name: Run pull request stats
+      - name: Pull Request Stats
         uses: flowwer-dev/pull-request-stats@master
         with:
-          period: 365
+          token: ${{ secrets.AJSHAJIB_PERSONAL_TOKEN }}
+          period: 180
