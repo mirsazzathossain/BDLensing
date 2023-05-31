@@ -2,7 +2,8 @@ name: Pull Request Stats
 
 on:
   pull_request:
-    types: [opened, reopened, synchronize, assigned]
+    types: [opened]
+  workflow_dispatch:
     
 jobs:
   stats:
