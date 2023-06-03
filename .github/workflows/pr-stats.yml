@@ -1,0 +1,21 @@
+name: Pull Request Stats
+
+on:
+  pull_request:
+    types: [opened, assigned]
+  workflow_dispatch:
+    
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Pull Request Stats
+        uses: flowwer-dev/pull-request-stats@master
+        with:
+          token: ${{ secrets.AJSHAJIB_PERSONAL_TOKEN }}
+          period: 180
