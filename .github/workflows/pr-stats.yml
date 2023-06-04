@@ -2,7 +2,7 @@ name: Pull Request Stats
 
 on:
   pull_request:
-    types: [opened, assigned]
+    types: [opened]
   workflow_dispatch:
     
 jobs:
@@ -17,5 +17,4 @@ jobs:
       - name: Pull Request Stats
         uses: flowwer-dev/pull-request-stats@master
         with:
-          token: ${{ secrets.AJSHAJIB_PERSONAL_TOKEN }}
           period: 180
