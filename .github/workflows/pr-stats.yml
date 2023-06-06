@@ -14,8 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - name: Run pull request stats
         uses: flowwer-dev/pull-request-stats@master
         with:
           period: 180
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
