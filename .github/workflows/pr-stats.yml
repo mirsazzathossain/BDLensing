@@ -5,15 +5,10 @@ on:
     types:
       - opened
       - synchronize
-      - reopened
-permissions:
-  pull-requests: write
-    
+      - reopened    
 jobs:
   stats:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     permissions:
       contents: read
       pull-requests: write
