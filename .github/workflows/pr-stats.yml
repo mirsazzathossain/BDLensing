@@ -8,7 +8,7 @@ on:
 jobs:
   stats:
     runs-on: ubuntu-latest
-    permissions: write-all
+    permissions: read-all|write-all
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
