@@ -1,14 +1,19 @@
 name: Pull Request Stats
 
 on:
-  pull_request:
-    types: [opened]
-
+  pull_request_target:
+    types:
+      - opened
+      - reopened    
 jobs:
   stats:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - name: Run pull request stats
         uses: flowwer-dev/pull-request-stats@master
         with:
-          period: 365
+          period: 180
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
