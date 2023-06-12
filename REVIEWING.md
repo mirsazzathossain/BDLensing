@@ -10,7 +10,7 @@
    can click on the "+" symbol at the beginning of a specific line to insert a 
    comment specific to that line.
 4. Check if the newly added codes follow good coding practice, for example, 
-   PEP8, avoiding redundancies. If not, point those out to be fixed.
+   avoiding redundancies. If not, point those out to be fixed.
 5. If you notice some code that can be rewritten to improve efficiency by a 
    significant amount, request to make that improvement.
 6. Once you are done viewing a file, click "Viewed" for that file. 
