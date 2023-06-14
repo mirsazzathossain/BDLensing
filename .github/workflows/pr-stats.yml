@@ -17,4 +17,4 @@ jobs:
         uses: flowwer-dev/pull-request-stats@master
         with:
           period: 180
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
