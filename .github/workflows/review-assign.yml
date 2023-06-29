@@ -7,8 +7,12 @@ on:
 jobs:
   assign:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - uses: hkusu/review-assign-action@v1
         with:
           assignees: ${{ github.actor }} # assign pull request author
           max-num-of-reviewers: 5
+          github-token: ${{ secrets.GITHUB_TOKEN }}
