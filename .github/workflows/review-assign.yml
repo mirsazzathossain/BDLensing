@@ -2,7 +2,7 @@ name: Review Assign
 
 on:
   pull_request:
-    types: [opened, ready_for_review]
+    types: [opened, ready_for_review, reopened]
 
 jobs:
   assign:
@@ -11,8 +11,11 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: hkusu/review-assign-action@v1
+      - uses: hkusu/review-assign-action@v1.3.1
         with:
           assignees: ${{ github.actor }} # assign pull request author
           max-num-of-reviewers: 5
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Show result
+        if: always()
+        run: echo '${{ steps.assign.outputs.result }}' # success or failure
+
