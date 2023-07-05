@@ -15,6 +15,7 @@ jobs:
         with:
           assignees: ${{ github.actor }} # assign pull request author
           max-num-of-reviewers: 5
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Show result
         if: always()
         run: echo '${{ steps.assign.outputs.result }}' # success or failure
