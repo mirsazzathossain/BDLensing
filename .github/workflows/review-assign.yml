@@ -7,6 +7,8 @@ on:
 jobs:
   assign:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     permissions:
       contents: write
       pull-requests: write
@@ -15,7 +17,6 @@ jobs:
         with:
           assignees: ${{ github.actor }} # assign pull request author
           max-num-of-reviewers: 5
-          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Show result
         if: always()
         run: echo '${{ steps.assign.outputs.result }}' # success or failure
