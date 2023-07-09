@@ -8,15 +8,15 @@ jobs:
   assign:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       pull-requests: write
     steps:
       - uses: hkusu/review-assign-action@v1.3.1
         with:
-          assignees: ${{ github.actor }} # assign pull request author
-          reviewers: ${{ vars.REVIEWERS }}
           max-num-of-reviewers: 5
+          reviewers: ${{ env.REVIEWERS }}
+          assignees: ${{ github.actor }}
       - name: Show result
         if: always()
         run: echo '${{ steps.assign.outputs.result }}' # success or failure
-
+        
