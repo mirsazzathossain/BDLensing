@@ -1,0 +1,20 @@
+name: Access control on main
+on: 
+  pull_request_target:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    branches:    
+      - 'main'
+
+jobs:
+  access_control:
+    runs-on: ubuntu-latest
+    env:
+      NAME_ADMIN: ajshajib
+    steps:
+      - if: ${{ github.actor != env.NAME_ADMIN }}
+        run: exit 1
+      - if: ${{ github.actor == env.NAME_ADMIN }}
+        run: echo "ok"
