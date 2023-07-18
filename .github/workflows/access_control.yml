@@ -1,4 +1,4 @@
-name: access_control_on_main
+name: Access control on main
 on: 
   pull_request_target:
     types:
