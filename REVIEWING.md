@@ -15,9 +15,17 @@
    significant amount, request to make that improvement.
 6. Once you are done viewing a file, click "Viewed" for that file. 
 7. Once you are done viewing all the files, click "Review changes", choose 
-   between the three options: "Comment", "Approve", "Request changes" as 
-   appropriate
-8. You are only checking the correctness and appropriateness of the code. 
+   between the three options: "Comment", "Approve", or  "Request changes" as 
+   appropriate.
+   - **If you choose "Request changes", then
+   this PR cannot be merged until the requested changes have been made, and you
+   will have to provide approval after the requested changes have been made
+   (please be timely to provide your approval once that is done
+   so that the PR can be merged in a timely manner).**
+   - **If you choose "Comment", then the PR will not wait for your approval if there
+   is at least one approval from any other reviewer. However, you can still provide approval
+   if you would like to after your comments have been incorporated.**
+9. You are only checking the correctness and appropriateness of the code. 
    You do not need to check goodness of model fit, stylistic elements in 
    the plots, etc.
-9. Please don't merge and leave that to @ajshajib.
+10. **Please don't merge yourself and leave that task to @ajshajib.**
