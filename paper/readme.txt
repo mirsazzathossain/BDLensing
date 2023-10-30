@@ -1,62 +1,100 @@
-% readme.txt
+%                                                             readme.txt
+% AA LaTeX class for Astronomy & Astrophysics
+% read-me file
+%                                                 (c) EDP Sciences, 2016
+%                                            tex-support@edpsciences.org
+%-----------------------------------------------------------------------
 %
-% MNRAS journal LaTeX package
-% v3.0 for LaTeX 2e
-%
-%
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License, either version 1.3
-% of this license or (at your option) any later version.
-% The latest version of this license is in
-%   http://www.latex-project.org/lppl.txt
-% and version 1.3 or later is part of all distributions of LaTeX
-% version 2005/12/01 or later.
-%
-% This work has the LPPL maintenance status `author-maintained'.
-% 
-% The Current Maintainer of this work is: Royal Astronomical Society,
-% MNRAS Editorial Office, who can be contacted on mn@ras.ac.uk
-%
-% This work consists of all the files listed in readme.txt
-%
-%
-% Last updated 12 November 2021
-%
-% Copyright (C) Royal Astronomical Society 2021, Blackwell Science 2001,
-% Cambridge University Press 1994
-%
-% See each file for a detailed author list and change log.
-%
-% This package consists of the following files:
+The following files are part of the macro package AA
 
-readme.txt          This file
-
-mnras.cls           MNRAS LaTeX document class
-mnras.bst           MNRAS BibTeX style
-
-mnras_guide.tex     User guide, LaTeX format
-mnras_guide.pdf     User guide, PDF format
-mnras_template.tex  A simple template paper
-
-example.eps         An example image used in the guide
-example.png         An example image used in the guide
-example.ps          An example image used in the guide
-
-legacy\legacy.txt   Description of the legacy releases
-legacy\mn2e.cls     v2.2 of mn2e.cls (deprecated)
-legacy\mn2e.bst     v1.1b of mn2e.bst (deprecated)
+  readme.txt      This file
+  aa.cls          The document class file
+  aadoc.pdf       User's Guide
+  aa.dem          Example of an article (LaTeX source)
 
 
-% Disclaimer:
-%
-% This LaTeX package is provided free to the community in the hope that it
-% assists them in preparing papers for the journal Monthly Notices of the
-% Royal Astronomical Society.
-% The files are provided 'as-is' with no guarantee of their suitability,
-% freedom from errors or omissions, or compatibility with any software.
-% The Royal Astronomical Society cannot provide user support for this package,
-% LaTeX, or for any other software.
-% Authors are free to use other styles or programmes if they wish.
-% Please see the journal instructions to authors for guidance.
-% This disclaimer is in addition to the No Warranty section of the licence,
-% at the link given above.
+  bibtex/       Directory for BIBTeX style
+   aa.bst       Bibliography style file
+   natnotes.pdf Brief reference sheet for Natbib
+
+All files are compressed in a single archive: aa-package.zip
+
+%---------------------------------------------------------------------
+%                            Main changes in the previous 8.x versions 
+%---------------------------------------------------------------------
+
+A&A accepts TeX files designed for LaTeX  as well as PDFLaTeX.
+Depending on your preferred LaTeX engine (LaTeX or pdfLaTeX), figures 
+should be sent as encapsulated PostScript files or in any other format 
+as PDF, JPG, TIF, BMP, and GIF (compatible with pdfLaTeX).
+The new macro does not include the classes traditabstract and structabstract
+anymore. They are replaced by the command \abstract. 
+See new instructions for details.
+
+The aa class supports now the "e-prints" command with BibTeX. 
+Two new LaTeX commands, \LEm{a note in the margin} and \LEt{note within the text}
+have been added.
+See the A&A Author's guide on the Web site for more information.
+  
+To enable compatibility with 7.x versions, an option has been 
+added.
+If you don't write structured references (according to
+the author-year natbib style), use this option:
+\documentclass[bibyear]{aa} 
+
+%-----------------------------------------------------------------------
+% Tips 
+%-----------------------------------------------------------------------
+% How to add in-text citation clickers that link to the corresponding
+% ADS abstract pages.
+%-----------------------------------------------------------------------
+
+This is a latex recipe to turn the in-text citations into clickers (in
+xdvi and the pdf or html output file) that link into ADS, opening the
+corresponding abstract page in the browser.  In this manner, an
+on-screen reader of your paper may open the cited abstract or download
+the cited paper in parallel to reading your paper, without jumping to
+the reference list of the latter.
+
+Insert the following commands into the preamble of your latex file:
+----------------------------------------
+\usepackage{natbib,twoopt}
+\usepackage[breaklinks=true]{hyperref} %% to avoid \citeads line fills
+\bibpunct{(}{)}{;}{a}{}{,}             %% natbib format for A&A and ApJ
+\makeatletter
+  \newcommandtwoopt{\citeads}[3][][]{\href{http://adsabs.harvard.edu/abs/#3}%
+    {\def\hyper@linkstart##1##2{}%
+     \let\hyper@linkend\@empty\citealp[#1][#2]{#3}}}
+  \newcommandtwoopt{\citepads}[3][][]{\href{http://adsabs.harvard.edu/abs/#3}%
+    {\def\hyper@linkstart##1##2{}%
+     \let\hyper@linkend\@empty\citep[#1][#2]{#3}}}
+  \newcommandtwoopt{\citetads}[3][][]{\href{http://adsabs.harvard.edu/abs/#3}%
+    {\def\hyper@linkstart##1##2{}%
+     \let\hyper@linkend\@empty\citet[#1][#2]{#3}}}
+  \newcommandtwoopt{\citeyearads}[3][][]%
+    {\href{http://adsabs.harvard.edu/abs/#3}
+    {\def\hyper@linkstart##1##2{}%
+     \let\hyper@linkend\@empty\citeyear[#1][#2]{#3}}}
+\makeatother
+-------------------------------------------
+
+Usage: use ADS biblabels and enter one per \citeads command, as in:
+
+---------------------------
+The existence of two emission features in the solar spectrum near
+12~$\mu$m was announced by
+\citetads{1981ApJ...247L..97M}. %% Murcray+others, MgI features
+We explained them long ago
+\citepads[see][]{1992A&A...253..567C}, %% Carlsson+Rutten+Shchukina MgI
+using the standard model of the solar atmosphere formulated in the
+monumental papers by Vernazza et al.\
+(\citeyearads{1973ApJ...184..605V}, % VALI
+ \citeyearads{1976ApJS...30....1V}, % VALII
+ \citeyearads{1981ApJS...45..635V}). % VALIII
+---------------------------
+
+This trick was initially contributed by Robert J. Rutten.  The above
+example of its usage is taken from his latex manual and template for
+students at
+http://www.staff.science.uu.nl/~rutte101/Report_recipe.html
+%-----------------------------------------------------------------------
