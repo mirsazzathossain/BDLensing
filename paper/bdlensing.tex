@@ -125,8 +125,12 @@ In this paper, we investigate the alignment between the mass and light using a s
 This paper is organized as follows. In Section \ref{sec:data}, we describe our lens sample and the \textit{HST} data we model. Then in Section \ref{sec:modeling_method}, we describe our lens modelling method. We present our results in Section \ref{sec:result}. Finally, we discuss our result and conclude the paper in Section \ref{sec:discussion}. Throughout the paper, we adopt a flat $\Lambda$CDM cosmology as the fiducial cosmology with $H_0= 70$ km s$^{-1}$ Mpc$^{-1}$ and $\Omega_{\rm m} = 0.3$.
 
 \section{Data} \label{sec:data}
+Our sample comprises of [\#] strong lensing systems. All of the strong galaxy-galaxy lensing candidates discovered in the Dark Energy Spectroscopic Instrument (DESI) Legacy Imaging Surveys, Data Release 7, using a deep neural network. Each system in our sample has multiple lensed images. In this section, we first describe the high-resolution imaging data obtained through HST. We then provide a brief overview of the lens systems in the sample.
 
-\subsection{\textit{HST} imaging}
+
+\subsection{\textit{HST} imaging} 
+
+Images of the lenses were obtained using the HST Wide Field Camera 3 (WFC3) in a specific filter: F140W in the infrared (IR) channel. The wide F140W filter covers the gap between the J and H bands that is inaccessible from the ground. 
 
 % example https://arxiv.org/pdf/2008.11724.pdf and https://arxiv.org/pdf/1807.09278.pdf
 
@@ -148,11 +152,68 @@ This paper is organized as follows. In Section \ref{sec:data}, we describe our l
 \subsubsection{Mass profile}
 % EPL, external shear 
 % example https://arxiv.org/pdf/1807.09278.pdf
+\textbf{EPL:} Elliptical Power Law mass profile is given by, 
+
+$$
+\kappa\left(x, y\right)=\frac{3-\gamma}{2}\left(\frac{\theta_{\mathrm{E}}}{\sqrt{q x^2+y^2 / q}}\right)^{\gamma-1}
+$$
+with $\theta_{\mathrm{E}}$ is the (circularized) Einstein radius, $\gamma$ is the negative power-law slope of the 3D mass distributions, $q$ is the minor/major axis ratio, and $x$ and $y$ are defined in a coordinate system aligned with the major and minor axis of the lens.
+\\
+\newline
+\textbf{SIE:} Singular Isothermal Ellipsoid(SIE) is given by,
+
+$$
+\kappa\left(x, y\right)=\frac{1}{2}\left(\frac{\theta_{\mathrm{E}}}{\sqrt{q x^2+y^2 / q}}\right)
+$$
+We used this profile for the fit of the neighboring satellite galaxies.
+\\
+\newline
+\textbf{Shear:} The pseudo-vector $\vec{\gamma}$=$(\gamma_1, \gamma_2)$ on the lens plane, whose components are
+$$
+\begin{aligned}
+& \gamma_1(\vec{x})=\frac{1}{2}\left(\Psi_{11}-\Psi_{22}\right) \\
+& \gamma_2(\vec{x})=\Psi_{12}=\Psi_{21},
+\end{aligned}
+$$
+This is called the shear. The eigenvalues of the shear matrix are
+$$
+\pm \sqrt{\gamma_1^2+\gamma_2^2}= \pm \gamma \text {. }
+$$
+Thus, there exists a coordinate rotation by an angle $\phi$ such that
+$$
+\left(\begin{array}{cc}
+\gamma_1 & \gamma_2 \\
+\gamma_2 & -\gamma_1
+\end{array}\right)=\gamma\left(\begin{array}{cc}
+\cos 2 \phi & \sin 2 \phi \\
+\sin 2 \phi & \cos 2 \phi
+\end{array}\right)
+$$
+\\
+\newline 
+\textbf{Flexion:} The second order lensing effect can be expressed in terms of the derivatives of the shear (or in terms of the third derivatives of the potential). We can construct the complex quantities
+$$
+F= F_1 + iF_2 = \left(\gamma_{\mathrm{1,1}} + \gamma_{\mathrm{2,2}}\right) + i\left(\gamma_{\mathrm{2,1}} - \gamma_{\mathrm{1,2}}\right)
+$$
+$$
+G= G_1 + iG_2 = \left(\gamma_{\mathrm{1,1}} - \gamma_{\mathrm{2,2}}\right) + i\left(\gamma_{\mathrm{2,1}} + \gamma_{\mathrm{1,2}}\right)
+$$
+which are called first and second flexion, respectively. They describe second order distortions of the images of lensed sources. The flexion is responsible for introducing a curvature and other anisotropic distortions
+in the images.
+
 
 \subsubsection{Light profiles}
 % Sersic or double sersic for lens galaxy
-
 % Sersic + shapelets for source galaxy
+
+The Sersic profile is parameterized as
+$$
+I\left(\theta_1, \theta_2\right)=I_{\mathrm{e}} \exp \left[-k\left\{\left(\frac{\sqrt{\theta_1^2+\theta_2^2 / q_{\mathrm{L}}^2}}{\theta_{\mathrm{eff}}}\right)^{1 / n_{\text {Sersic }}}-1\right\}\right] .
+$$
+
+where $R_{\rm eff}$ is the effective radius, $I_e$ is the surface brightness at $R_{\rm eff}$,
+$q_L$ is axis ratio, $n_{\rm Sersic}$ s is the Sérsic index, and $k$ is a normalizing constant
+so that $R_{\rm eff}$ becomes the half-light radius (Sérsic 1968).
 
 \subsection{Modelling procedure}
 
@@ -192,6 +253,8 @@ This paper is organized as follows. In Section \ref{sec:data}, we describe our l
 % need table of model parameters, example https://arxiv.org/pdf/2008.11724.pdf
 
 \subsection{Estimation of $\Sigma_{10}$}
+
+
 
 \subsection{Mass and light alignment}
 
