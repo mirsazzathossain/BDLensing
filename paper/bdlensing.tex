@@ -115,7 +115,7 @@
 
 Strong gravitational lensing is the phenomenon of forming multiple images from a background source due to the gravitational bending of light path by a massive foreground deflector, such as a galaxy, galaxy group, or cluster. As a result, strong lensing systems are powerful probes of the mass distribution of the foreground deflector \citep[see][for a review on strong lensing by galaxies]{Shajib22}.
 
-Whereas the observed light traces the stars in a lensing galaxy, strong lensing traces the total matter distribution, including dark and baryonic components. As a result, strong lensing can be used to study the relative alignment between dark matter and stars. Any detected offset between these two components can indicate self-interaction in the dark matter particles \citep{Harvey14, Kahlhoefer14, Robertson17}. In the $\Lambda$ cold dark matter ($\Lambda$CDM) cosmology -- the current paradigm to describe our Universe -- the EAGLE simulation predicts no significant offset $\sim$200pc, regardless of the galaxy being a field galaxy or a cluster member \citep{Schaller15}. Although a recent merger can lead to an offset between the dark matter and stars, these systems are statistically very rare \citep{Schaller15}. On the observational front, only one system has been observed with an offset much larger than this prediction (1.72$\pm$0.42 kpc), where the deflector consists of two merging galaxies  \citep[][]{Shu16}. %Although there was an initial report of a similar offset for a cluster-member galaxy in Abell 3827 \citep{Williams11, Massey15}, the offset was ruled out with more data \citep{Massey18}.
+Whereas the observed light traces the stars in a lensing galaxy, strong lensing traces the total matter distribution, including dark and baryonic components. As a result, strong lensing can be used to study the relative alignment between dark matter and stars. Any detected offset between these two components can indicate self-interaction in the dark matter particles \citep{Harvey14, Kahlhoefer14, Robertson17}. In the $\Lambda$ cold dark matter ($\Lambda$CDM) cosmology -- the current paradigm to describe our Universe -- the EAGLE simulation predicts no significant offset $\sim$200 pc, regardless of the galaxy being a field galaxy or a cluster member \citep{Schaller15}. Although a recent merger can lead to an offset between the dark matter and stars, these systems are statistically very rare \citep{Schaller15}. On the observational front, only one system has been observed with an offset much larger than this prediction ($1.72\pm 0.42$ kpc), where the deflector consists of two merging galaxies  \citep[][]{Shu16}. %Although there was an initial report of a similar offset for a cluster-member galaxy in Abell 3827 \citep{Williams11, Massey15}, the offset was ruled out with more data \citep{Massey18}.
 \citet{Shajib19} find a root-mean-square (RMS) offset in a sample of 13 strong lenses to be 0\farcs04 (i.e., $\sim$200 pc at z$\sim$0.5) excluding three outliers, one of which has two comparable-mass deflectors potentially residing in the same parent halo. Similarly, \citet{Shajib21} constrained a 68 percent upper limit of 218$\pm$19 pc from a sample of 23 galaxy--galaxy lenses.
 
 The misalignment between the mass and light distributions can also be traced using the position angles of the major axes of the elliptical galaxies, which are the most common type of deflectors at the galaxy scale. Previous studies mostly found tight alignment within $\sim$10$\degr$ \citep{Keeton98b, Kochanek02, Treu09, Gavazzi12, Sluse12, Bruderer16, Shajib19, Shajib21}, with higher misalignments are accompanied by large ``external'' shear magnitude, although the vice versa is not necessary. The accompaniment of a large ``external'' shear with a large misalignment can be interpreted as systems in a crowded environment that are not yet dynamically relaxed, as they can have stellar orbits misaligned with the underlying dark matter distribution. Simulations found highly misaligned orbits in isolated systems to be unstable and rare \citep{Heiligman79, Martinet88, Adams07, Debattista15}. However, this interpretation treats ``external'' shear as originating purely from nearby line-of-sight galaxies external to the central deflector. Interestingly, \citet{Etherington23} suggested that this ``external'' shear is not purely of external origin and can arise from the inadequacy of the mass model for lensing galaxy in capturing all of its angular complexity \citep[for example, boxy/discyness, ellipticity gradient, isophotal twists;][]{VandeVyvere22, VandeVyvere22b}. This suggestion from \citet{Etherington23} makes the explanation of high misalignment as stemming from interaction with a crowded environment less favorable.
@@ -125,7 +125,7 @@ In this paper, we investigate the alignment between the mass and light using a s
 This paper is organized as follows. In Section \ref{sec:data}, we describe our lens sample and the \textit{HST} data we model. Then in Section \ref{sec:modeling_method}, we describe our lens modelling method. We present our results in Section \ref{sec:result}. Finally, we discuss our result and conclude the paper in Section \ref{sec:discussion}. Throughout the paper, we adopt a flat $\Lambda$CDM cosmology as the fiducial cosmology with $H_0= 70$ km s$^{-1}$ Mpc$^{-1}$ and $\Omega_{\rm m} = 0.3$.
 
 \section{Data} \label{sec:data}
-Our sample comprises of [\#] strong lensing systems. All of the strong galaxy-galaxy lensing candidates discovered in the Dark Energy Spectroscopic Instrument (DESI) Legacy Imaging Surveys, Data Release 7, using a deep neural network. Each system in our sample has multiple lensed images. In this section, we first describe the high-resolution imaging data obtained through HST. We then provide a brief overview of the lens systems in the sample.
+Our sample comprises of 20 strong lensing systems. All of the strong galaxy-galaxy lensing candidates discovered in the Dark Energy Spectroscopic Instrument (DESI) Legacy Imaging Surveys, Data Release 7, using a deep neural network. Each system in our sample has multiple lensed images. In this section, we first describe the high-resolution imaging data obtained through HST. We then provide a brief overview of the lens systems in the sample.
 
 
 \subsection{\textit{HST} imaging} 
@@ -147,6 +147,8 @@ Images of the lenses were obtained using the HST Wide Field Camera 3 (WFC3) in a
 
 \section{Lens modelling (Method)} \label{sec:modeling_method}
 
+To model the lenses, we used the lens modeling software lenstronomy, available on GitHub1 (Birrer et al. 2015; Bir-rer \& Amara 2018).
+
 \subsection{Lens model ingredients}
 
 \subsubsection{Mass profile}
@@ -157,24 +159,31 @@ Images of the lenses were obtained using the HST Wide Field Camera 3 (WFC3) in a
 $$
 \kappa\left(x, y\right)=\frac{3-\gamma}{2}\left(\frac{\theta_{\mathrm{E}}}{\sqrt{q x^2+y^2 / q}}\right)^{\gamma-1}
 $$
-with $\theta_{\mathrm{E}}$ is the (circularized) Einstein radius, $\gamma$ is the negative power-law slope of the 3D mass distributions, $q$ is the minor/major axis ratio, and $x$ and $y$ are defined in a coordinate system aligned with the major and minor axis of the lens.
+
+The Elliptical Power Law (EPL) mass profile represents a specific form of the mass distribution used in gravitational lensing studies. It describes the convergence (\(\kappa\)) in terms of the coordinates \(x\) and \(y\) in an elliptical system, where \(x\) and \(y\) represent the Cartesian coordinates on the lens plane, and \(\theta_{\mathrm{E}}\) is the Einstein radius. The parameter \(q\) denotes the axis ratio of the ellipse, representing the elongation or flattening of the mass distribution.
 \\
 \newline
-\textbf{SIE:} Singular Isothermal Ellipsoid(SIE) is given by,
+\textbf{SIE:} Singular Isothermal Ellipsoid (SIE) is given by,
 
 $$
 \kappa\left(x, y\right)=\frac{1}{2}\left(\frac{\theta_{\mathrm{E}}}{\sqrt{q x^2+y^2 / q}}\right)
 $$
-We used this profile for the fit of the neighboring satellite galaxies.
+
+The factor $\frac{1}{2}$ is introduced to scale the convergence appropriately for the SIE model. We used this profile for the fit of the neighboring satellite galaxies.
 \\
 \newline
-\textbf{Shear:} The pseudo-vector $\vec{\gamma}$=$(\gamma_1, \gamma_2)$ on the lens plane, whose components are
-$$
-\begin{aligned}
-& \gamma_1(\vec{x})=\frac{1}{2}\left(\Psi_{11}-\Psi_{22}\right) \\
-& \gamma_2(\vec{x})=\Psi_{12}=\Psi_{21},
-\end{aligned}
-$$
+\textbf{Shear:} Shear is a measure of the differential stretching or distortion of the images of background sources due to the gravitational lensing effect. It quantifies how much the shapes of background objects are elongated or deformed by the gravitational field of the lensing mass.\\
+
+
+The pseudo-vector $\vec{\gamma}$=$(\gamma_1, \gamma_2)$ on the lens plane, whose components are
+%
+\begin{equation}
+    \begin{aligned}
+        & \gamma_1(\vec{x})=\frac{1}{2}\left(\Psi_{11}-\Psi_{22}\right) \\
+        & \gamma_2(\vec{x})=\Psi_{12}=\Psi_{21},
+    \end{aligned}
+\end{equation}
+%
 This is called the shear. The eigenvalues of the shear matrix are
 $$
 \pm \sqrt{\gamma_1^2+\gamma_2^2}= \pm \gamma \text {. }
@@ -206,14 +215,12 @@ in the images.
 % Sersic or double sersic for lens galaxy
 % Sersic + shapelets for source galaxy
 
-The Sersic profile is parameterized as
+We chose the elliptical Sersic function (Sersic 1968) to model the deflector light profile. The Sersic profile is parameterized as
 $$
-I\left(\theta_1, \theta_2\right)=I_{\mathrm{e}} \exp \left[-k\left\{\left(\frac{\sqrt{\theta_1^2+\theta_2^2 / q_{\mathrm{L}}^2}}{\theta_{\mathrm{eff}}}\right)^{1 / n_{\text {Sersic }}}-1\right\}\right] .
+I\left(x_1, y_2\right)=I_{\mathrm{e}} \exp \left[-k\left\{\left(\frac{\sqrt{x^2+y^2 / q_{\mathrm{L}}^2}}{\theta_{\mathrm{eff}}}\right)^{1 / n_{\text {Sersic }}}-1\right\}\right] .
 $$
 
-where $R_{\rm eff}$ is the effective radius, $I_e$ is the surface brightness at $R_{\rm eff}$,
-$q_L$ is axis ratio, $n_{\rm Sersic}$ s is the Sérsic index, and $k$ is a normalizing constant
-so that $R_{\rm eff}$ becomes the half-light radius (Sérsic 1968).
+where $R_{\rm eff}$ is the effective radius, $I_e$ is the surface brightness at $R_{\rm eff}$, $q_L$ is axis ratio, $n_{\rm Sersic}$ is the Sérsic index, and $k$ is a normalizing constant so that $R_{\rm eff}$ becomes the half-light radius (Sérsic 1968).
 
 \subsection{Modelling procedure}
 
