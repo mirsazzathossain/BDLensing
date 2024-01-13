@@ -1,4 +1,3 @@
-R_eff_light: 0.7774285505755497
 Sigma_10: !!python/object/apply:numpy.core.multiarray.scalar
 - &id001 !!python/object/apply:numpy.dtype
   args:
@@ -15,19 +14,19 @@ Sigma_10: !!python/object/apply:numpy.core.multiarray.scalar
   - -1
   - 0
 - !!binary |
-  dOmSPvn4nj8=
+  IBkdvz/opT8=
 Sigma_10_flux_selected: !!python/object/apply:numpy.core.multiarray.scalar
 - *id001
 - !!binary |
-  Dl9NGhDomD8=
+  60ElmbZDnD8=
 Sigma_20: !!python/object/apply:numpy.core.multiarray.scalar
 - *id001
 - !!binary |
-  ZfCuGMAtpj8=
+  DlZqn2BHqj8=
 Sigma_20_flux_selected: !!python/object/apply:numpy.core.multiarray.scalar
 - *id001
 - !!binary |
-  ktCZjzVckT8=
+  xoDe0ogKnz8=
 center_x_light:
 - -0.32682950068738265
 - 0.0006392903969295038
