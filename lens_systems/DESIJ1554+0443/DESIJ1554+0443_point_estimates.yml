@@ -1,8 +1,33 @@
 R_eff_light: 0.7774285505755497
-Sigma_10: 0.04126791804525968
-Sigma_10_flux_selected: 0.02516853370512212
-Sigma_20: 0.05088080886798499
-Sigma_20_flux_selected: 0.018891235417208448
+Sigma_10: !!python/object/apply:numpy.core.multiarray.scalar
+- &id001 !!python/object/apply:numpy.dtype
+  args:
+  - f8
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - -1
+  - -1
+  - 0
+- !!binary |
+  dOmSPvn4nj8=
+Sigma_10_flux_selected: !!python/object/apply:numpy.core.multiarray.scalar
+- *id001
+- !!binary |
+  Dl9NGhDomD8=
+Sigma_20: !!python/object/apply:numpy.core.multiarray.scalar
+- *id001
+- !!binary |
+  ZfCuGMAtpj8=
+Sigma_20_flux_selected: !!python/object/apply:numpy.core.multiarray.scalar
+- *id001
+- !!binary |
+  ktCZjzVckT8=
 center_x_light:
 - -0.32682950068738265
 - 0.0006392903969295038
